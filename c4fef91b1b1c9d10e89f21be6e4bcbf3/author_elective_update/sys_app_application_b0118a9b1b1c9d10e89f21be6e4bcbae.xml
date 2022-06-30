@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="DELETE">
+        <active>true</active>
+        <category display_value="">Custom Applications</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <name/>
+        <order/>
+        <roles>x_ibmrt_ibm_gdpcon.admin,x_ibmrt_ibm_gdpcon.scripter,x_ibmrt_ibm_gdpcon.producer</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-30 13:54:07</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b0118a9b1b1c9d10e89f21be6e4bcbae</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>IBM Guardium Notification Consumer</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IBM Guardium Notification Consumer" source="x_ibmrt_ibm_gdpcon">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IBM Guardium Notification Consumer">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_scope>
+        <sys_update_name>sys_app_application_b0118a9b1b1c9d10e89f21be6e4bcbae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-30 15:10:25</sys_updated_on>
+        <title>IBM Guardium Notification Consumer</title>
+        <view_name/>
+    </sys_app_application>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IBM Guardium Notification Consumer">c4fef91b1b1c9d10e89f21be6e4bcbf3</application>
+        <file_path/>
+        <instance_id>4f1a696cdb720110b847ac44d496192d</instance_id>
+        <instance_name>ven05343</instance_name>
+        <name>sys_app_application_b0118a9b1b1c9d10e89f21be6e4bcbae</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application"><sys_app_application action="INSERT_OR_UPDATE"><active>true</active><category display_value="">Custom Applications</category><description/><device_type>browser</device_type><hint/><name/><order/><roles>x_ibmrt_ibm_gdpcon.admin,x_ibmrt_ibm_gdpcon.scripter,x_ibmrt_ibm_gdpcon.producer</roles><sys_class_name>sys_app_application</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-06-30 13:54:07</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>b0118a9b1b1c9d10e89f21be6e4bcbae</sys_id><sys_mod_count>2</sys_mod_count><sys_name>IBM Guardium Notification Consumer</sys_name><sys_overrides/><sys_package display_value="IBM Guardium Notification Consumer" source="x_ibmrt_ibm_gdpcon">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_package><sys_policy/><sys_scope display_value="IBM Guardium Notification Consumer">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_scope><sys_update_name>sys_app_application_b0118a9b1b1c9d10e89f21be6e4bcbae</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-06-30 15:10:25</sys_updated_on><title>IBM Guardium Notification Consumer</title><view_name/></sys_app_application></record_update>]]></payload>
+        <payload_hash>1746327605</payload_hash>
+        <record_name>IBM Guardium Notification Consumer</record_name>
+        <reverted_from/>
+        <source>c4fe3d5b1b1c9d10e89f21be6e4bcbb8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-30 15:10:26</sys_created_on>
+        <sys_id>b682d6db1b5c9d10e89f21be6e4bcb47</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>181b529d2cd0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-30 15:10:26</sys_updated_on>
+        <type>Application Menu</type>
+        <update_guid>be8256db795c9d10e96ff1ed7254ab61</update_guid>
+        <update_guid_history>be8256db795c9d10e96ff1ed7254ab61:1746327605,bd6216db6f5c9d10ab282432709382ce:-1003361643,f0118a9bda1c9d10fd9aabd0321d1eb1:1746327605</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="IBM Guardium Notification Consumer">ee54965f1b5c9d10e89f21be6e4bcb3c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-30 15:18:20</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_application">sys_app_application</sys_db_object>
+        <sys_id>0e99265b03254a8b86ec6307fe825e69</sys_id>
+        <sys_metadata>b0118a9b1b1c9d10e89f21be6e4bcbae</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>IBM Guardium Notification Consumer</sys_name>
+        <sys_package display_value="IBM Guardium Notification Consumer" source="x_ibmrt_gdpcon">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="IBM Guardium Notification Consumer">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_scope>
+        <sys_scope_delete/>
+        <sys_update_name>sys_app_application_b0118a9b1b1c9d10e89f21be6e4bcbae</sys_update_name>
+        <sys_update_version display_value="sys_app_application_b0118a9b1b1c9d10e89f21be6e4bcbae">b682d6db1b5c9d10e89f21be6e4bcb47</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-30 15:18:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

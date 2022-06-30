@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-30 13:49:48</sys_created_on>
+        <sys_id>f110ca9b1b1c9d10e89f21be6e4bcbca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_ibmrt_ibm_gdpcon_notification.x_ibmrt_ibm_gdpcon.scripter</sys_name>
+        <sys_package display_value="IBM Guardium Notification Consumer" source="x_ibmrt_ibm_gdpcon">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IBM Guardium Notification Consumer">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_scope>
+        <sys_security_acl display_value="x_ibmrt_ibm_gdpcon_notification">3910ca9b1b1c9d10e89f21be6e4bcbc7</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_f110ca9b1b1c9d10e89f21be6e4bcbca</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-30 13:49:48</sys_updated_on>
+        <sys_user_role display_value="x_ibmrt_ibm_gdpcon.scripter" name="x_ibmrt_ibm_gdpcon.scripter">dd1fbd5b1b1c9d10e89f21be6e4bcba9</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="IBM Guardium Notification Consumer">c4fef91b1b1c9d10e89f21be6e4bcbf3</application>
+        <file_path/>
+        <instance_id>4f1a696cdb720110b847ac44d496192d</instance_id>
+        <instance_name>ven05343</instance_name>
+        <name>sys_security_acl_role_f110ca9b1b1c9d10e89f21be6e4bcbca</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-06-30 13:49:48</sys_created_on><sys_id>f110ca9b1b1c9d10e89f21be6e4bcbca</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_ibmrt_ibm_gdpcon_notification.x_ibmrt_ibm_gdpcon.scripter</sys_name><sys_package display_value="IBM Guardium Notification Consumer" source="x_ibmrt_ibm_gdpcon">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_package><sys_policy/><sys_scope display_value="IBM Guardium Notification Consumer">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_scope><sys_security_acl display_value="x_ibmrt_ibm_gdpcon_notification">3910ca9b1b1c9d10e89f21be6e4bcbc7</sys_security_acl><sys_update_name>sys_security_acl_role_f110ca9b1b1c9d10e89f21be6e4bcbca</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-06-30 13:49:48</sys_updated_on><sys_user_role display_value="x_ibmrt_ibm_gdpcon.scripter" name="x_ibmrt_ibm_gdpcon.scripter">dd1fbd5b1b1c9d10e89f21be6e4bcba9</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>365427753</payload_hash>
+        <record_name>x_ibmrt_ibm_gdpcon_notification.x_ibmrt_ibm_gdpcon.scripter</record_name>
+        <reverted_from/>
+        <source>c4fe3d5b1b1c9d10e89f21be6e4bcbb8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-30 13:49:48</sys_created_on>
+        <sys_id>3510ca9b1b1c9d10e89f21be6e4bcbcc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>181b4e003440000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-30 13:49:48</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>7d10ca9b711c9d10fb2de64af56d8acb</update_guid>
+        <update_guid_history>7d10ca9b711c9d10fb2de64af56d8acb:365427753</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_ibmrt_ibm_gdpcon_notification.x_ibmrt_ibm_gdpcon.scripter">79678e531b5c9d10e89f21be6e4bcb7f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-30 14:21:45</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>07459945beb8466aa54aeb7f0a64cb09</sys_id>
+        <sys_metadata>f110ca9b1b1c9d10e89f21be6e4bcbca</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_ibmrt_ibm_gdpcon_notification.x_ibmrt_ibm_gdpcon.scripter</sys_name>
+        <sys_package display_value="IBM Guardium Notification Consumer" source="x_ibmrt_gdpcon">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="IBM Guardium Notification Consumer">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_scope>
+        <sys_scope_delete/>
+        <sys_update_name>sys_security_acl_role_f110ca9b1b1c9d10e89f21be6e4bcbca</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_f110ca9b1b1c9d10e89f21be6e4bcbca">3510ca9b1b1c9d10e89f21be6e4bcbcc</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-30 14:21:45</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
