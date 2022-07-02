@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="processor_script" table="x_ibmrt_gdpcon_processor_script">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="correlation_id" table="x_ibmrt_gdpcon_notification">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes>edge_encryption_enabled=true</attributes>
+        <attributes/>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
@@ -14,26 +14,10 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Processor Script</column_label>
+        <column_label>Correlation ID</column_label>
         <comments/>
         <create_roles/>
-        <default_value>(function processNotification( gr_notification ) {&#13;
-  /*********************************&#13;
-  * IBM Guardium Notification Processor Script&#13;
-   * &#13;
-   * PARAMETERS:&#13;
-   * - gr_notification:  The ServiceNow GlideRecord of the "IBM Guardium Notification" received&#13;
-   *   it has fields:  short_description (subject), description (body), correlation_id, and task_ref (a reference to any type of task document created by this script)&#13;
-   *&#13;
-   * RETURN:&#13;
-   * - true: to stop further script processing &#13;
-   * OR&#13;
-   * - false: to let the next script process the message&#13;
-   **********************************/   &#13;
-  // gs.info( gr_notification.getValue('short_description') );&#13;
-&#13;
-  return true;&#13;
-})( gr_notification );</default_value>
+        <default_value/>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -43,18 +27,18 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>processor_script</element>
+        <element>correlation_id</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="Script">script</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <mandatory>false</mandatory>
-        <max_length>8000</max_length>
-        <name>x_ibmrt_gdpcon_processor_script</name>
+        <max_length>512</max_length>
+        <name>x_ibmrt_gdpcon_notification</name>
         <next_element/>
         <primary>false</primary>
-        <read_only>false</read_only>
+        <read_only>true</read_only>
         <read_roles/>
         <reference/>
         <reference_cascade_rule/>
@@ -68,16 +52,16 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-06-30 14:00:21</sys_created_on>
-        <sys_id>03d1821f1b1c9d10e89f21be6e4bcbff</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Processor Script</sys_name>
+        <sys_created_on>2022-07-02 13:29:15</sys_created_on>
+        <sys_id>8f7e80841b641110489ceb522a4bcb1c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Correlation ID</sys_name>
         <sys_package display_value="IBM Guardium Notification Consumer" source="x_ibmrt_gdpcon">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_package>
         <sys_policy/>
         <sys_scope display_value="IBM Guardium Notification Consumer">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_scope>
-        <sys_update_name>sys_dictionary_x_ibmrt_gdpcon_processor_script_processor_script</sys_update_name>
+        <sys_update_name>sys_dictionary_x_ibmrt_gdpcon_notification_correlation_id</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-07-02 13:49:34</sys_updated_on>
+        <sys_updated_on>2022-07-02 13:29:15</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

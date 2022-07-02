@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_ibmrt_gdpcon_notification</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Notification_onReceive</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	// Fire an event so that a Task-based record can be created even though the 
+	//  caller has very limited ACL
+	// The user who creates this entry via Table API should have
+	//  role:  x_784508_ibm_guard.create
+	var title = current.getDisplayValue(current.getDisplayName());
+	if (title.length > 200) {
+		title = title.substr(0,197) + '...';
+	}
+	gs.eventQueue(
+		'x_ibmrt_gdpcon.notification_received',
+		current,
+		'IBM Guardium Notification: received\n ' + title,
+		current.getUniqueValue(),
+		''
+	);
+	
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-07-02 13:33:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c9ee48841b641110489ceb522a4bcb8f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Notification_onReceive</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IBM Guardium Notification Consumer" source="x_ibmrt_gdpcon">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IBM Guardium Notification Consumer">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_scope>
+        <sys_update_name>sys_script_c9ee48841b641110489ceb522a4bcb8f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-07-02 13:38:39</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=c9ee48841b641110489ceb522a4bcb8f"/>
+</record_update>

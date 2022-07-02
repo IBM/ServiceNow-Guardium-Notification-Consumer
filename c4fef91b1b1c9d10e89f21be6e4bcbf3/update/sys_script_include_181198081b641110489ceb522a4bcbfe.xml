@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_ibmrt_gdpcon.GuardiumProcessorCommon</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Common functions used when processing IBM Guardium notifications</description>
+        <name>GuardiumProcessorCommon</name>
+        <script><![CDATA[var GuardiumProcessorCommon = Class.create();
+GuardiumProcessorCommon.prototype = {
+    initialize: function() {
+    },
+
+    getReportDetails: function(body) {
+		//
+		// Returns the "Alert Details" portion of an Alert as JSON
+		//  the return is an array of report rows
+		//
+        /**
+        ---- Default Alert Message Template ----
+
+        Alert Name: %%alertName. Alert Description: %%description.
+        Current value: %%alertQueryValue 
+        Base query value: %%alertBaseQueryValue 
+        Threshold: %%alertThreshold 
+        Query period: %%alertQueryFromDate - %%alertQueryToDate 
+        Alert Classification: %%classification 
+        Category: %%category 
+        Severity: %%severity
+
+        Recommended Action:
+        %%recommendation
+         
+        Alert Details:
+        %%report_query_result
+        **/
+
+        var report_data = [];
+        var begin = -1;
+
+        // Find the beginning of the report
+        var lines = body.split('\n');
+        if (lines.length > 0) {
+            for (var i = 0; i < lines.length; i++) {
+                if ('Alert Details' == lines[i].trim()) {
+                    begin = 1 + i;
+                    break;
+                }
+            }
+        }
+
+        // Parse report of tabular format (columns are separated by tab characters)
+        // This code is building a JSON representation of the report query result.
+        if (begin >= 0) {
+            // Parse header row
+            var headers = lines[begin].match(/([^\t]+)/g);
+            if (headers && headers.length) {
+                // Parse result rows
+                for (var k = 1 + begin; k < lines.length; k++) {
+                    if (!lines[k].trim()) break;
+
+                    var values = lines[k].match(/([^\t]+)/g);
+                    if (values && (headers.length == values.length)) {
+                        var result_row = {};
+                        for (var p = 0; p < headers.length; p++) {
+                            result_row[headers[p]] = values[p];
+                        }
+                        report_data.push(result_row);
+                    }
+                }
+            }
+        }
+
+        return report_data;
+    },
+
+
+    // Attempts to find a database instance that matches the Guardium Data Source name
+    getAffectedDatabaseId: function(ds_name) {
+        var ds_id = null;
+
+        // Find CMDB (database instance or catalog) affected
+        gs.info('IBM Guardium Notification: match Guardium data source, "' + ds_name + '", to ServiceNow Database Instance');
+
+        try {
+            // If the "ServiceNow IBM Guardium" plug-in is installed, 
+            //  match the DS name to the Guardium data source record.
+            //  The Guardium data source record will have a link to a 
+            //  ServiceNow Database Instance or Catalog that matches
+            //  fqdn, tcp_port, sys_class_name, and database / service id
+            //  of the Guardium Data Source.
+            var gr_ds = new GlideRecord("x_ibmrt_guard_datasource");
+            gr_ds.addQuery('name', '=', ds_name);
+            gr_ds.query();
+            if (gr_ds.next() && gr_ds.getValue) {
+                var db_id = gr_ds.getValue('database_instance');
+                if (db_id) {
+                    // Return the linked ServiceNow database instance
+                    gs.info('IBM Guardium Notification: found ServiceNow database "' +
+							gr_ds.getDisplayValue('database_instance') + '"');
+                    return db_id;
+                }
+            }
+        } catch (e) {
+            // Plug-in not installed ... try to find a database instance with the same name
+            var gr_db = new GlideRecord("cmdb_ci_db_instance");
+            gr_db.addQuery('name', '=', ds_name);
+            gr_db.query();
+            if (gr_db.next()) {
+                    gs.info('IBM Guardium Notification: found ServiceNow database "' + 
+							gr_db.getValue('name') + '"');
+                return gr_db.getUniqueValue();
+            }
+        }
+        return null;
+    },
+
+	type: 'GuardiumProcessorCommon'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-07-02 13:44:18</sys_created_on>
+        <sys_id>181198081b641110489ceb522a4bcbfe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GuardiumProcessorCommon</sys_name>
+        <sys_package display_value="IBM Guardium Notification Consumer" source="x_ibmrt_gdpcon">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="IBM Guardium Notification Consumer">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_scope>
+        <sys_update_name>sys_script_include_181198081b641110489ceb522a4bcbfe</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-07-02 13:44:18</sys_updated_on>
+    </sys_script_include>
+</record_update>

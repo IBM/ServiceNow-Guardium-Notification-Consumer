@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_script/>
+        <description/>
+        <event_name>x_ibmrt_gdpcon.notification_received</event_name>
+        <name>EventHandler_onNotificationReceived</name>
+        <order>100</order>
+        <script><![CDATA[(function eventHandler(event, current) {
+    if (!event) return;
+    var title = event.parm1 || '';
+    var docId = event.parm2 || '';
+
+    // Make sure there is a document
+    var gr_message = current;
+    if (!gr_message) {
+        gr_message = new GlideRecord('x_ibmrt_gdpcon_notification');
+        if (!gr_message.get(docId)) {
+            gs.error("IBM Guardium Notification: document was not provided");
+            return;
+        }
+    }
+
+    // Handle incoming Guardium Alert message by parsing the content
+    var subject = gr_message.getValue('subject');
+    gs.info('IBM Guardium Notification: processing\n "' + subject + '"');
+
+    // Pass the message to scripts 
+    //  menu: IBM Guardium Message Consumer > Processor Scripts
+    var handled = false;
+    var gr_script = new GlideRecord('x_ibmrt_gdpcon_processor_script');
+    gr_script.addActiveQuery();
+    gr_script.orderBy('order');
+    gr_script.query();
+    while (gr_script.next()) {
+        handled = runScript(gr_message, gr_script);
+        if (handled) break;
+    }
+    if (!handled) {
+        gs.warn('IBM Guardium Notification: unknown, unhandled event:\n "' + subject + '"');
+    }
+
+})(event, current);
+
+// Run the given script document against the incoming Guardium message
+function runScript(gr_message, gr_script) {
+    // Run any scripts created by 
+    //  role: x_784508_ibm_guard.script or x_784508_ibm_guard.admin
+    try {
+        var evaluator = new GlideScopedEvaluator();
+        evaluator.putVariable("gr_notification", gr_message);
+        var handled = evaluator.evaluateScript(gr_script, "processor_script");
+        if (handled) {
+            return handled;
+        }
+    } catch (e) {
+        gs.error('IBM Guardium Notification: script error:\n ' + (e.message || e));
+    }
+    return null;
+}]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-07-02 13:38:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6ddf08c41b641110489ceb522a4bcb0f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>EventHandler_onNotificationReceived</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="IBM Guardium Notification Consumer" source="x_ibmrt_gdpcon">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="IBM Guardium Notification Consumer">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_scope>
+        <sys_update_name>sysevent_script_action_6ddf08c41b641110489ceb522a4bcb0f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-07-02 13:39:57</sys_updated_on>
+    </sysevent_script_action>
+</record_update>
