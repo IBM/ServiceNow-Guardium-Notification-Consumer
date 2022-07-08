@@ -7,14 +7,14 @@
         <hint/>
         <name/>
         <order>100</order>
-        <roles/>
+        <roles>x_ibmrt_gdpcon.producer</roles>
         <sys_class_name>sys_app_application</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-06-30 15:26:30</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ce16dadf1b5c9d10e89f21be6e4bcbec</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>IBM Guardium Notification Consumer</sys_name>
         <sys_overrides/>
         <sys_package display_value="IBM Guardium Notification Consumer" source="x_ibmrt_gdpcon">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_package>
@@ -22,7 +22,7 @@
         <sys_scope display_value="IBM Guardium Notification Consumer">c4fef91b1b1c9d10e89f21be6e4bcbf3</sys_scope>
         <sys_update_name>sys_app_application_ce16dadf1b5c9d10e89f21be6e4bcbec</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-06-30 15:26:30</sys_updated_on>
+        <sys_updated_on>2022-07-08 13:36:02</sys_updated_on>
         <title>IBM Guardium Notification Consumer</title>
         <view_name/>
     </sys_app_application>
