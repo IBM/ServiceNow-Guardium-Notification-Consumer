@@ -9,6 +9,7 @@ Consume Guardium alerts and other notifications to allow further processing befo
   - [Notes](#notes)
   - [Technical Documentation](#technical-documentation)
   - [Design Diagram](#design)
+  - [User Roles](#user-roles)
   - [Licensing](#licensing)
   - [Contributing](CONTRIBUTING.md)
   - [Contact us](issues)
@@ -39,6 +40,14 @@ This repository holds the **IBM Guardium Notification Consumer** code that serve
 ## Design 
 
 ![](images/nc-design.png)
+
+## User Roles:
+
+  | Role name | Comments |
+  | :---      | :--- |
+  | x_ibmrt_gdpcon.producer | Able to create entries in Notifications table |
+  | x_ibmrt_gdpcon.producer | Able to create and edit entries in Notifications and Processor Scripts |
+  | x_ibmrt_gdpcon.admin | Able to delete entries in Notifications and Processor Scripts |
 
 ## Licensing
 

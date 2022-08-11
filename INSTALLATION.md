@@ -19,8 +19,14 @@
 ### Change "External Ticketing" Configuration
 
 - Go to `Setup > Tools and Views > External Ticketing System`
-- Fill in account information for the ServiceNow URL, ServiceNow user name with at least role of `x_ibmrt_gdpcon.producer`, and the ServiceNow user password
-- Change the Alerter, Risk Spotter, and Threat Analytics to use the template (ServiceNow table) provided by this plug-in:  `x_ibmrt_gdpcon_notification`
+- Fill in account information for the ServiceNow URL, **ServiceNow user name** with *at least* roles of `x_ibmrt_gdpcon.producer` and `personalize_decision_table_input`, and the ServiceNow user password
+
+![](images/minimum-roles.png)
+
+- Change the Alerter, Risk Spotter, and Threat Analytics to use the template (ServiceNow table) provided by this plug-in:  **IBM Guardium Notification** (`x_ibmrt_gdpcon_notification`)
+
+![](images/table-notification.png)
+
 - Notice in the diagram below that I have simplified the alert notification so that it is easier to parse in the example script code provided with this ServiceNow plug-in
 
 ![](images/gdp-configuration.png)
